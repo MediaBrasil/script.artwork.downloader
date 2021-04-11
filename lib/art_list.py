@@ -29,6 +29,13 @@ def arttype_list():
                            'gui_string': 32128,
                            'art_type': 'poster',
                            'filename': 'poster.jpg'},
+                           
+                          {'media_type': 'movie',
+                           'bulk_enabled': setting.get('movie_keyart'),
+                           'solo_enabled': 'true',
+                           'gui_string': 32119,
+                           'art_type': 'keyart',
+                           'filename': 'keyart.jpg'},
 
                           {'media_type': 'movie',
                            'bulk_enabled': setting.get('movie_fanart'),
@@ -107,6 +114,13 @@ def arttype_list():
                            'gui_string': 32121,
                            'art_type': 'fanart',
                            'filename': 'fanart.jpg'},
+                           
+                          {'media_type': 'tvshow',
+                           'bulk_enabled': setting.get('tvshow_seasonfanart'),
+                           'solo_enabled': 'true',
+                           'gui_string': 32120,
+                           'art_type': 'seasonfanart',
+                           'filename': 'season%02d-fanart.jpg'},
 
                           {'media_type': 'tvshow',
                            'bulk_enabled': setting.get('tvshow_extrafanart'),
@@ -162,8 +176,15 @@ def arttype_list():
                            'solo_enabled': 'true',
                            'gui_string': 32127,
                            'art_type': 'characterart',
-                           'filename': 'character.png'},
+                           'filename': 'characterart.png'},
 
+                          {'media_type': 'tvshow',
+                           'bulk_enabled': setting.get('tvshow_keyart'),
+                           'solo_enabled': 'true',
+                           'gui_string': 32119,
+                           'art_type': 'keyart',
+                           'filename': 'keyart.jpg'},
+                           
                           # Musicvideo
                           {'media_type': 'musicvideo',
                            'bulk_enabled': setting.get('musicvideo_poster'),

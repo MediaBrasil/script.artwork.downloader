@@ -131,7 +131,7 @@ msgid "Report"
 msgstr ""
 
 msgctxt "#32029"
-msgid "[I](After changes are made you must restart XBMC) [/I]"
+msgid "[I](After changes are made you must restart Kodi) [/I]"
 msgstr ""
 
 msgctxt "#32030"
@@ -280,11 +280,19 @@ msgstr ""
 #empty strings from id 32104 to 32105
 
 msgctxt "#32106"
-msgid "Use XBMC pre-caching [I](caches images to thumbnails folder while downloading) [/I]"
+msgid "Use Kodi pre-caching [I](caches images to thumbnails folder while downloading) [/I]"
 msgstr ""
 
-#empty strings from id 32107 to 32120
-#Add-on messages: Image types id=32121 to 32140
+#empty strings from id 32107 to 32118
+#Add-on messages: Image types id=32119 to 32140
+
+msgctxt "#32119"
+msgid "KeyArt"
+msgstr ""
+
+msgctxt "#32120"
+msgid "Season Fanarts"
+msgstr ""
 
 msgctxt "#32121"
 msgid "Fanart"
@@ -311,7 +319,7 @@ msgid "ClearLogo"
 msgstr ""
 
 msgctxt "#32127"
-msgid "Character Art"
+msgid "CharacterArt"
 msgstr ""
 
 msgctxt "#32128"
@@ -323,7 +331,7 @@ msgid "Season Posters"
 msgstr ""
 
 msgctxt "#32130"
-msgid "Thumb 16:9"
+msgid "Landscape"
 msgstr ""
 
 msgctxt "#32131"
@@ -339,7 +347,7 @@ msgid "Artwork"
 msgstr ""
 
 msgctxt "#32134"
-msgid "Season Thumbs 16:9"
+msgid "Season Landscapes"
 msgstr ""
 
 #empty strings from id 32135 to 32140
@@ -382,7 +390,7 @@ msgid "No failed or missing items found"
 msgstr ""
 
 msgctxt "#32150"
-msgid "add-on aborted because of XBMC shutting down"
+msgid "add-on aborted because of Kodi shutting down"
 msgstr ""
 
 msgctxt "#32151"
@@ -409,7 +417,7 @@ msgid "Please donate or contribute to the following sites to show your support:"
 msgstr ""
 
 msgctxt "#32183"
-msgid "[I]www.xbmc.org [/I]"
+msgid "[I]www.kodi.org [/I]"
 msgstr ""
 
 msgctxt "#32184"
@@ -437,7 +445,7 @@ msgid "Thanks to:"
 msgstr ""
 
 msgctxt "#32190"
-msgid "Team XBMC and the authors of the other addons on which this was based."
+msgid "Team Kodi and the authors of the other addons on which this was based."
 msgstr ""
 
 msgctxt "#32191"
@@ -445,5 +453,13 @@ msgid "[I]For bugs, requests or general questions visit the [/I]"
 msgstr ""
 
 msgctxt "#32192"
-msgid "[I]  Artwork Downloader thread on the XBMC forum. [/I]"
+msgid "[I]  Artwork Downloader thread on the Kodi forum. [/I]"
+msgstr ""
+
+msgctxt "#32193"
+msgid "Get Art - Solo Mode"
+msgstr ""
+
+msgctxt "#32194"
+msgid "Get Art - Gui Mode"
 msgstr ""

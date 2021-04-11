@@ -202,7 +202,7 @@ class Main:
                               nolabel = __localize__(32027),
                               yeslabel = __localize__(32028)):
                     runcmd = os.path.join(__addonpath__, 'lib/viewer.py')
-                    xbmc.executebuiltin('XBMC.RunScript (%s,%s) '%(runcmd, 'downloadreport'))
+                    xbmc.executebuiltin('RunScript (%s,%s) '%(runcmd, 'downloadreport'))
         else:
             dialog_msg('okdialog',
                        message = __localize__(32010) + summary,
@@ -445,10 +445,19 @@ class Main:
 
                         # File naming
                         if art_item['art_type']   == 'extrafanart':
-                            artwork['filename'] = ('extrafanart%s.jpg'% str(limit_counter + 1))
+                            artwork['filename'] = ('fanart%s.jpg'% str(limit_counter + 1))
                         elif art_item['art_type'] == 'extrathumbs':
                             artwork['filename'] = (art_item['filename'] % str(limit_counter + 1))
                         elif art_item['art_type'] in ['seasonposter']:
+                            if artwork['season'] == '0':
+                                artwork['filename'] = "season-specials-poster.jpg"
+                            elif artwork['season'] == 'all':
+                                artwork['filename'] = "season-all-poster.jpg"
+                            elif artwork['season'] == 'n/a':
+                                break
+                            else:
+                                artwork['filename'] = (art_item['filename'] % int(artwork['season']))
+                        elif art_item['art_type'] in ['seasonfanart']:
                             if artwork['season'] == '0':
                                 artwork['filename'] = "season-specials-poster.jpg"
                             elif artwork['season'] == 'all':
@@ -530,7 +539,12 @@ class Main:
                                             if not self.fileops._exists(os.path.join(targetdir, artwork['filename'])):
                                                 missingfiles = True
                                     # Check if image already exist in database
-                                    elif not art_item['art_type'] in ['seasonlandscape','seasonbanner','seasonposter']:
+                                    elif not art_item['art_type'] in ['seasonlandscape','seasonbanner','seasonposter','seasonfanart']:
+                                        if setting['files_local']and not self.fileops._exists(artwork['localfilename']):
+                                            missingfiles = True
+                                        elif not artcheck.get(art_item['art_type']):
+                                            missingfiles = True
+                                    if art_item['art_type'] in ['seasonlandscape','seasonbanner','seasonposter','seasonfanart']:
                                         if setting['files_local']and not self.fileops._exists(artwork['localfilename']):
                                             missingfiles = True
                                         elif not artcheck.get(art_item['art_type']):
@@ -552,7 +566,7 @@ class Main:
                                             art_item['art_type'] in ['extrafanart', 'extrathumbs']):
                                             failed_items.append('[%s] %s %s' % (currentmedia['name'], art_item['art_type'], __localize__(32147)))
                             # Do some special check on season artwork
-                            if art_item['art_type'] == 'seasonlandscape' or art_item['art_type'] == 'seasonbanner' or art_item['art_type']   == 'seasonposter':
+                            if art_item['art_type'] == 'seasonlandscape' or art_item['art_type'] == 'seasonbanner' or art_item['art_type']   == 'seasonposter' or art_item['art_type']   == 'seasonfanart':
                                 # If already present in list set limit on 1 so it is skipped
                                 limit_counter = 0
                                 if artwork['season'] in seasonfile_presents:
